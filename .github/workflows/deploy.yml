@@ -13,4 +13,4 @@ jobs:
       with:
         server: ftp.kcni9234.odns.fr
         username: mignonfrancois.digitalinit.net@digitalinit.net
-        password: ${{ secrets.ftp_password }}
+        password: ${{ secrets.FTP_PASSWORD }}
