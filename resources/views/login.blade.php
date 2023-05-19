@@ -3,7 +3,6 @@
 
 <head>
     <title>Page d'authentification</title>
-    
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 </head>
 
