@@ -11,7 +11,7 @@
         <?php
             try {
                 DB::connection()->getPdo();
-                echo "C'est bon, la connexion à la base de données fonctionne.";
+                echo "La connexion à la base de données a été établie avec succès.";
             } catch (\Exception $e) {
                 echo "Erreur de connexion à la base de données : " . $e->getMessage();
             }
