@@ -1,39 +1,44 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Providers\RouteServiceProvider;
 
 class LoginController extends Controller
 {
-    // Afficher le formulaire de connexion
-    public function showLoginForm()
+    public function __construct()
     {
-        // TODO : vérifier si l'utilisateur est déjà connecté, si oui, redirigez-le vers la page d'accueil
-        return view('login');
+        $this->middleware('guest')->except('logout');
     }
 
-    // Gérer la soumission du formulaire de connexion
     public function login(Request $request)
     {
-        // Valider les données entrées par l'utilisateur
+        //TODO: Use your custom form request or use the request helper
+
+        // Validating input
         $request->validate([
-            'email' => 'required|email',
-            'password' => 'required'
+            'EMAIL' => 'required|email',
+            'PASSWORD' => 'required'
         ]);
 
-        // Vérifier si l'utilisateur existe et si les informations de connexion sont correctes
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            // Si l'authentification est réussie, rediriger l'utilisateur vers la page d'accueil
-            // TODO : Ajouter des actions après la connexion réussie, par exemple, enregistrement de la dernière date de connexion
-            return redirect()->intended('/');
+        // Attempting to authenticate
+        if (Auth::attempt(['EMAIL' => $request->email, 'PASSWORD' => $request->password])) {
+            //TODO: Redirect to a specific location if successful
+            return redirect(RouteServiceProvider::HOME);
         }
 
-        // Si l'authentification échoue, rediriger l'utilisateur vers la page de connexion avec un message d'erreur
-        // TODO : Ajouter une limite d'essais de connexion et bloquer temporairement l'utilisateur après un certain nombre d'essais
+        //TODO: Return a specific view with an error if unsuccessful
         return back()->withErrors([
-            'email' => 'Les informations d\'identification fournies ne correspondent pas à nos dossiers.',
+            'email' => 'The provided credentials do not match our records.',
         ]);
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        return redirect('/login');
     }
 }
