@@ -17,6 +17,7 @@
 
     <div id="content-div">
         <!-- Ajoute un bouton bascule pour le thème sombre -->
+        
         <input type="checkbox" id="toggle_checkbox">
         <label for="toggle_checkbox">
             <div id="star">
