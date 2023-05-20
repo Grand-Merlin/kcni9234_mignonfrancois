@@ -5,7 +5,7 @@
     <!-- Définit le titre de la page -->
     <title>Page d'authentification</title>
     <!-- Lie la feuille de style CSS à la page HTML -->
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="{{ asset('../../../css/styles.css') }}">
 </head>
 
 <body>
@@ -17,7 +17,7 @@
 
     <div id="content-div">
         <!-- Ajoute un bouton bascule pour le thème sombre -->
-        
+
         <input type="checkbox" id="toggle_checkbox">
         <label for="toggle_checkbox">
             <div id="star">
@@ -56,7 +56,8 @@
     </div>
 
     <!-- Lie le fichier JavaScript à la page HTML -->
-    <script src="../js/main.js"></script>
+    <link rel="stylesheet" href="{{ asset('../../../js/main.js') }}">
+
 </body>
 
 </html>
