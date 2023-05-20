@@ -56,7 +56,7 @@
     </div>
 
     <!-- Lie le fichier JavaScript à la page HTML -->
-    <link rel="stylesheet" href="{{ asset('../../../js/main.js') }}">
+    <script src="{{ asset('../../../js/main.js') }}"></script>
 
 </body>
 
