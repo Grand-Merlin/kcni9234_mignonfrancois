@@ -9,8 +9,11 @@
 <body>
     <div>
         <?php
-            if(DB::connection()->getPdo()){
-                echo "c'est bon ça marche";
+            try {
+                DB::connection()->getPdo();
+                echo "C'est bon, la connexion à la base de données fonctionne.";
+            } catch (\Exception $e) {
+                echo "Erreur de connexion à la base de données : " . $e->getMessage();
             }
         ?>
     </div>
