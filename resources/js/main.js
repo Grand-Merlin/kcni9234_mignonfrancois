@@ -1,3 +1,4 @@
+require('./bootstrap');
 // Définit une fonction pour valider une adresse e-mail
 function validateEmail(email) {
     // Crée une expression régulière pour tester le format de l'e-mail
