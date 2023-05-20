@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/register', function () {
+Route::get('/', function () {
     return view('register');
 })->name('register');
 /*
