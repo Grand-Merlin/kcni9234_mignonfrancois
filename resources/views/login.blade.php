@@ -27,7 +27,7 @@
             <div id="moon"></div>
         </label>
         <!-- Crée un formulaire pour la connexion de l'utilisateur -->
-        <form action="login.php" method="post" onsubmit="event.preventDefault(); return checkInputs();">
+        <form action="login.php" method="post" onsubmit="event.preventDefault();">
             <!-- Enveloppe les divs des labels et des champs de saisie dans un élément div -->
             <div class="input-container">
                 <!-- Enveloppe le label de l'e-mail et le label du mot de passe dans un élément div -->
@@ -48,7 +48,7 @@
             <!-- Crée un conteneur pour les boutons -->
             <div class="button-container">
                 <!-- Crée un bouton pour soumettre le formulaire et vérifier les entrées de l'utilisateur -->
-                <input type="submit" value="Connexion" onclick="return checkInputs()">
+                <input type="submit" value="Connexion">
                 <!-- Crée un bouton pour rediriger l'utilisateur vers la page d'inscription -->
                 <button onclick="window.location.href='register'">Créer un nouveau compte</button>
             </div>
