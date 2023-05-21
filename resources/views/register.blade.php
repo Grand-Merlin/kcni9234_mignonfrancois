@@ -25,7 +25,6 @@
             <div id="moon"></div>
         </label>
         <div id="registration-form">
-            <h2>Inscription</h2>
             <form action="/registerUser" method="post">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 @csrf
@@ -52,11 +51,14 @@
 
                         <label for="locality">Localité*:</label><br>
                         <input type="text" id="locality" name="locality" required><br>
+                        
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">J'accepte les <a href="/terms-and-conditions">Conditions Générales</a>*</label><br>
                     </div>
                 </div>
                 <div class="button-container">
                     <input type="submit" value="Inscription">
-                    <button onclick="window.location.href='login'">Se connecter</button>
+                    <button type="button" onclick="window.location.href='login'">Annuler</button>
                 </div>
             </form>
         </div>
