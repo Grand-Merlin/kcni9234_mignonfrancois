@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\LoginController;
 
 
 /*
@@ -33,5 +33,4 @@ Route::get('/immobilier', function () {
 });
 
 Route::post('/verifauth', [LoginController::class, 'login']);
-Route::post('/', [LoginController::class, 'login']);
 
