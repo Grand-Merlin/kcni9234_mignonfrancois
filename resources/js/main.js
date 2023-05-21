@@ -53,3 +53,14 @@ darkModeToggle.addEventListener('change', function () {
         button.classList.toggle('dark-mode');
     });
 });
+
+// Sélectionne le formulaire
+const form = document.querySelector('form');
+
+// Ajoute un écouteur d'événement pour la soumission du formulaire
+form.addEventListener('submit', function(event) {
+    // Si les entrées de l'utilisateur ne sont pas valides, empêche la soumission du formulaire
+    if (!checkInputs()) {
+        event.preventDefault();
+    }
+});
