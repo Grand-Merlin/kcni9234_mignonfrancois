@@ -50,7 +50,7 @@ class LoginController extends Controller
     public function logout(Request $request)
     {
         // Log successful logout
-        Log::info('User logged out: ', ['email' => Auth::user()->EMAIL]);
+        Log::info('User logged out: ', ['email' => Auth::user()->email]);
 
         Auth::logout();
         return redirect('/login');
