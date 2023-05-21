@@ -27,7 +27,7 @@
             <div id="moon"></div>
         </label>
         <!-- Crée un formulaire pour la connexion de l'utilisateur -->
-        <form action="/" method="post">
+        <form action="/immobilier" method="post">
             <!-- Enveloppe les divs des labels et des champs de saisie dans un élément div -->
             <div class="input-container">
                 <!-- Enveloppe le label de l'e-mail et le label du mot de passe dans un élément div -->
