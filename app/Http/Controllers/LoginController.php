@@ -25,7 +25,7 @@ class LoginController extends Controller
         ]);
 
         // Attempting to authenticate
-        if (Auth::attempt(['EMAIL' => $request->email, 'PASSWORD' => $request->password])) {
+        if (Auth::attempt(['EMAIL' => $request->EMAIL, 'password' => $request->PASSWORD])) {
             //TODO: Redirect to a specific location if successful
             return redirect(RouteServiceProvider::HOME);
         }
