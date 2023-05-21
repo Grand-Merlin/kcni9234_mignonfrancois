@@ -32,5 +32,5 @@ Route::get('/immobilier', function () {
     return view('immobilier');
 });
 
-Route::post('/', [App\Http\Controllers\LoginController::class, 'login']);
+Route::post('/', [App\Http\Controllers\LoginController.php::class, 'login']);
 
