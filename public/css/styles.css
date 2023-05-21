@@ -13,8 +13,8 @@ body {
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 90vw; /* 90% de la largeur de la fenêtre du navigateur */
-    height: 80vh; /* 80% de la hauteur de la fenêtre du navigateur */
+    width: 95vw; /* 90% de la largeur de la fenêtre du navigateur */
+    height: 90vh; /* 80% de la hauteur de la fenêtre du navigateur */
     transform: translate(-50%, -50%);
     overflow: hidden;  /* cache tout ce qui déborde du div */
     border-radius: 2%;  /* arrondit les bords du div */
