@@ -28,6 +28,8 @@
         </label>
         <!-- Crée un formulaire pour la connexion de l'utilisateur -->
         <form action="/verifauth" method="post">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            @csrf
             <!-- Enveloppe les divs des labels et des champs de saisie dans un élément div -->
             <div class="input-container">
                 <!-- Enveloppe le label de l'e-mail et le label du mot de passe dans un élément div -->
