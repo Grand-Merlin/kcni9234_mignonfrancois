@@ -32,5 +32,5 @@ Route::get('/immobilier', function () {
     return view('immobilier');
 });
 
-Route::post('/', [App\Http\Controllers\LoginController::class, 'login']);
+Route::post('/verifauth', [App\Http\Controllers\LoginController::class, 'login']);
 
