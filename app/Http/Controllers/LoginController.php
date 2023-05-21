@@ -21,30 +21,31 @@ class LoginController extends Controller
     {
         // Validating input
         $request->validate([
-            'EMAIL' => 'required|email',
-            'PASSWORD' => 'required'
+            'email' => 'required|email',
+            'password' => 'required'   
         ]);
-
+    
         // Get user by email
-        $user = User::where('EMAIL', $request->EMAIL)->first();
-
+        $user = User::where('EMAIL', $request->email)->first(); 
+    
         // Check if user exists and the hashed password matches the given password
-        if ($user && Hash::check($request->PASSWORD, $user->PASSWORD)) {
+        if ($user && Hash::check($request->password, $user->PASSWORD)) { 
             // Log successful login
-            Log::info('User logged in: ', ['email' => $request->EMAIL]);
-
+            Log::info('User logged in: ', ['email' => $request->email]); 
+    
             // Manual login
             Auth::login($user);
             return redirect(RouteServiceProvider::IMMOBILIER);
         }
-
+    
         // Log failed login attempt
-        Log::warning('Failed login attempt: ', ['email' => $request->EMAIL]);
-
+        Log::warning('Failed login attempt: ', ['email' => $request->email]);
+    
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ]);
     }
+    
 
     public function logout(Request $request)
     {
