@@ -9,5 +9,11 @@
 <body>
     <h1>Bienvenue sur la page de gestion des biens immobiliers</h1>
     <!-- Vous pouvez ajouter ici d'autres éléments HTML, comme des formulaires, des tableaux, etc. -->
+
+    <!-- Ajoute un formulaire pour la déconnexion -->
+    <form method="POST" action="/logout">
+        @csrf
+        <button type="submit">Déconnexion</button>
+    </form>
 </body>
 </html>
