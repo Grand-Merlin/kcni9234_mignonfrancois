@@ -31,6 +31,7 @@ function checkPassword() {
         return true;
     }
 }
+
 // Définit une nouvelle fonction pour vérifier les entrées de l'utilisateur
 function checkInputs() {
     // Appelle la fonction checkEmail() et stocke son résultat dans la variable isEmailValid
@@ -41,6 +42,7 @@ function checkInputs() {
     // Si les deux sont vrais, la fonction renvoie vrai. Sinon, elle renvoie faux.
     return isEmailValid && isPasswordValid;
 }
+
 // Sélectionne le bouton bascule du thème sombre
 const darkModeToggle = document.querySelector('#toggle_checkbox');
 
