@@ -55,7 +55,7 @@
                 </div>
                 <div class="button-container">
                     <input type="submit" value="Inscription">
-                    <button type="button" onclick="window.location.href='login'">Annuler</button>
+                    <button type="button" onclick="window.location.href='/'">Annuler</button>
                 </div>
             </form>
         </div>
