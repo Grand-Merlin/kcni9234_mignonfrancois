@@ -50,7 +50,7 @@
                 <!-- Crée un bouton pour soumettre le formulaire et vérifier les entrées de l'utilisateur -->
                 <input type="submit" value="Connexion" onclick="return checkInputs()">
                 <!-- Crée un bouton pour rediriger l'utilisateur vers la page d'inscription -->
-                <button onclick="window.location.href='register.php'">Créer un nouveau compte</button>
+                <button onclick="window.location.href='register'">Créer un nouveau compte</button>
             </div>
         </form>
     </div>
