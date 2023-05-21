@@ -33,4 +33,5 @@ Route::get('/immobilier', function () {
 });
 
 Route::post('/verifauth', [LoginController::class, 'login']);
+Route::post('/logout', [LoginController::class, 'logout']);
 
