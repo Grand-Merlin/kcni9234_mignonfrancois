@@ -17,24 +17,28 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         //TODO: Use your custom form request or use the request helper
-
+    
         // Validating input
         $request->validate([
             'EMAIL' => 'required|email',
             'PASSWORD' => 'required'
         ]);
-
-        // Attempting to authenticate
-        if (Auth::attempt(['EMAIL' => $request->EMAIL, 'password' => $request->PASSWORD])) {
-            //TODO: Redirect to a specific location if successful
-            return redirect(RouteServiceProvider::HOME);
+    
+        // Get user by email
+        $user = User::where('EMAIL', $request->email)->first();
+    
+        // Check if user exists and the hashed password matches the given password
+        if ($user && md5($request->password) === $user->PASSWORD) {
+            // Manual login
+            Auth::login($user);
+            return redirect(RouteServiceProvider::IMMOBILIER);
         }
-
-        //TODO: Return a specific view with an error if unsuccessful
+    
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ]);
     }
+    
 
     public function logout(Request $request)
     {
