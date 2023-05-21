@@ -32,4 +32,4 @@ Route::get('/immobilier', function () {
     return view('immobilier');
 });
 
-Route::post('/login', [LoginController::class, 'login']);
+Route::post('/login', 'Auth\LoginController@login');
