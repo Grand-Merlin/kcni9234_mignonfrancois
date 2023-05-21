@@ -26,7 +26,7 @@
         </label>
         <div id="registration-form">
             <h2>Inscription</h2>
-            <form action="/register" method="post">
+            <form action="/registerUser" method="post">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 @csrf
                 <div class="input-container">
