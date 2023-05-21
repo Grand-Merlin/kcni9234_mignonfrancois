@@ -117,6 +117,17 @@ button:hover, input[type="submit"]:hover {
 .input-container {
     display: flex;
     gap: 20px;
+    width: 70%; /* Ajustez cette valeur selon vos préférences */
+    margin: 0 auto; /* Centrer le conteneur */
+}
+
+.input-container div {
+    width: 48%; /* Espace pour chaque colonne */
+}
+
+.input-container label, .input-container input, .input-container textarea {
+    display: block; /* Les éléments prennent toute la largeur disponible */
+    margin-bottom: 10px; /* Espace entre les éléments */
 }
 
 /* Votre code CSS actuel pour le switch... */
