@@ -24,6 +24,7 @@
             </div>
             <div id="moon"></div>
         </label>
+        
         <div id="registration-form">
             <form action="/registerUser" method="post">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
