@@ -53,6 +53,6 @@ class LoginController extends Controller
         Log::info('User logged out: ', ['email' => Auth::user()->EMAIL]);
 
         Auth::logout();
-        return redirect('/login');
+        return redirect('/');
     }
 }
