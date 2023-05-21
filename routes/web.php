@@ -26,5 +26,9 @@ Route::get('/test', function () {
     return view('testconndb');
 });
 
+Route::get('/immobilier', function () {
+    return view('immobilier');
+});
+
 
 
