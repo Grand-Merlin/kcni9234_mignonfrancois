@@ -36,6 +36,7 @@ class LoginController extends Controller
             // Manual login
             Auth::login($user);
             return redirect(RouteServiceProvider::IMMOBILIER);
+            
         }
     
         // Log failed login attempt
