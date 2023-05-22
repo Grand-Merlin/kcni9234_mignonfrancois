@@ -1,68 +1,76 @@
-// Définit une fonction pour valider une adresse e-mail
-function validateEmail(email) {
-    // Crée une expression régulière pour tester le format de l'e-mail
-    const re = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    // Teste l'e-mail avec l'expression régulière et renvoie le résultat
-    return re.test(email);
-}
+document.addEventListener('DOMContentLoaded', (event) => {
+    /* Récupération des éléments HTML */
+    const toggleCheckbox = document.getElementById('toggle_checkbox');
+    const body = document.body;
+    const formContainer = document.querySelector('.form-container');
+    const form = document.querySelector('form');
 
-function checkEmail() {
-    const email = document.querySelector('#email').value;
-    const isValid = validateEmail(email);
-    if (isValid) {
-        alert('Email valide');
-    } else {
-        alert('Email invalide');
-    }
-    return isValid; // Retourne le résultat de la validation
-}
+    /* Désactivation temporaire des transitions */
+    body.style.transition = 'none';
+    form.style.transition = 'none';
+    formContainer.style.transition = 'none';
 
-// Définit une fonction pour vérifier que le mot de passe n'est pas vide
-function checkPassword() {
-    // Sélectionne le champ de saisie du mot de passe et obtient sa valeur
-    const password = document.querySelector('#password').value;
-    // Si le mot de passe est vide, affiche une alerte "Le mot de passe ne peut pas être vide" et renvoie false
-    if (password === '') {
-        alert('Le mot de passe ne peut pas être vide');
-        return false;
-    }
-    // Sinon, renvoie true
-    else {
-        return true;
-    }
-}
+    /* Définition des couleurs d'arrière-plan et de texte initiales */
+    body.style.backgroundColor = '#f9f4e1'; 
+    body.style.color = '#000'; 
+    form.style.backgroundColor = '#f9f4e1'; 
 
-// Définit une nouvelle fonction pour vérifier les entrées de l'utilisateur
-function checkInputs() {
-    // Appelle la fonction checkEmail() et stocke son résultat dans la variable isEmailValid
-    const isEmailValid = checkEmail();
-    // Appelle la fonction checkPassword() et stocke son résultat dans la variable isPasswordValid
-    const isPasswordValid = checkPassword();
-    // Renvoie le résultat de l'opération ET entre isEmailValid et isPasswordValid
-    // Si les deux sont vrais, la fonction renvoie vrai. Sinon, elle renvoie faux.
-    return isEmailValid && isPasswordValid;
-}
+    /* Réactivation des transitions après un court délai */
+    setTimeout(() => {
+        body.style.transition = '';
+        form.style.transition = '';
+        formContainer.style.transition = '';
+    }, 100);
 
-// Sélectionne le bouton bascule du thème sombre
-const darkModeToggle = document.querySelector('#toggle_checkbox');
-
-// Ajoute un écouteur d'événement pour le changement du bouton bascule du thème sombre
-darkModeToggle.addEventListener('change', function () {
-    // Change le thème de la page lorsque le bouton bascule du thème sombre est changé
-    document.body.classList.toggle('dark-mode');
-    document.querySelector('form').classList.toggle('dark-mode');
-    Array.from(document.querySelectorAll('button, input[type="submit"]')).forEach(function (button) {
-        button.classList.toggle('dark-mode');
+    /* Écoute du changement d'état du bouton bascule */
+    toggleCheckbox.addEventListener('change', function() {
+        if (this.checked) {
+            /* Passage en mode sombre */
+            body.style.backgroundColor = '#333';
+            body.style.color = '#f9f4e1'; 
+            form.style.backgroundColor = '#333';
+            formContainer.style.backgroundImage = "url('background_dark.png')";
+        } else {
+            /* Passage en mode clair */
+            body.style.backgroundColor = '#f9f4e1'; 
+            body.style.color = '#000'; 
+            form.style.backgroundColor = '#f9f4e1'; 
+            formContainer.style.backgroundImage = "url('background.png')";
+        }
     });
 });
 
-// Sélectionne le formulaire
-const form = document.querySelector('form');
+/* Fonction pour valider une adresse e-mail */
+function validateEmail(email) {
+    /* Création d'une expression régulière pour tester le format de l'e-mail */
+    const re = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    /* Test de l'e-mail avec l'expression régulière et renvoi du résultat */
+    return re.test(email);
+}
 
-// Ajoute un écouteur d'événement pour la soumission du formulaire
-form.addEventListener('submit', function(event) {
-    // Si les entrées de l'utilisateur ne sont pas valides, empêche la soumission du formulaire
-    if (!checkInputs()) {
-        event.preventDefault();
+/* Fonction pour vérifier si le champ du mot de passe est vide */
+function isPasswordEmpty(password) {
+    /* Vérification si le mot de passe est vide et renvoi du résultat */
+    return password === "";
+}
+
+/* Ajout d'un écouteur d'événements "submit" au formulaire */
+document.getElementById('login-form').addEventListener('submit', function(event) {
+    try {
+        /* Récupération de l'e-mail et du mot de passe des champs de saisie */
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        /* Si l'e-mail n'est pas valide ou si le mot de passe est vide, blocage de la soumission du formulaire */
+        if (!validateEmail(email)) {
+            alert('Veuillez entrer une adresse e-mail valide.');
+            event.preventDefault();
+        } else if (isPasswordEmpty(password)) {
+            alert('Veuillez entrer un mot de passe.');
+            event.preventDefault();
+        }
+    } catch (error) {
+        /* Si une erreur se produit, capture et affichage de celle-ci */
+        console.error("Une erreur s'est produite lors de la validation du formulaire :", error);
     }
 });

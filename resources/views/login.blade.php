@@ -1,65 +1,35 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <!-- Définit le titre de la page -->
-    <title>Page d'authentification</title>
-    <!-- Lie la feuille de style CSS à la page HTML -->
-    <link rel="stylesheet" href="{{ asset('../../../css/styles.css') }}">
+    <title>Formulaire</title>
+    <link href="{{ asset('../css/styles.css') }}" rel="stylesheet">
 </head>
-
 <body>
-    
-    <div id="background-div">
-        <div class="background"></div>
-        <div class="background background_dark"></div>
-    </div>
+<div class="form-container">
+    <form id="login-form" method="POST" action="/verifauth" novalidate>
+        <div class="form-group">
+            <label for="email">Adresse e-mail* :</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Mot de passe* :</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <button type="submit" id="login">Connexion</button>
+            <button type="button" id="create-account">Créer un nouveau compte</button>
+        </div>
+    </form>
+ </div>
+<input type="checkbox" id="toggle_checkbox">
 
-    <div id="content-div">
-        <!-- Ajoute un bouton bascule pour le thème sombre -->
-
-        <input type="checkbox" id="toggle_checkbox">
-        <label for="toggle_checkbox">
-            <div id="star">
-                <div class="star" id="star-1">★</div>
-                <div class="star" id="star-2">★</div>
-            </div>
-            <div id="moon"></div>
-        </label>
-        <!-- Crée un formulaire pour la connexion de l'utilisateur -->
-        <form action="/verifauth" method="post">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            @csrf
-            <!-- Enveloppe les divs des labels et des champs de saisie dans un élément div -->
-            <div class="input-container">
-                <!-- Enveloppe le label de l'e-mail et le label du mot de passe dans un élément div -->
-                <div>
-                    <!-- Crée un label pour le champ de saisie de l'e-mail -->
-                    <label for="email">Email:</label><br>
-                    <!-- Crée un label pour le champ de saisie du mot de passe -->
-                    <label for="password">Mot de passe:</label>
-                </div>
-                <!-- Enveloppe le champ de saisie de l'e-mail et le champ de saisie du mot de passe dans un élément div -->
-                <div>
-                    <!-- Crée un champ de saisie pour l'e-mail de l'utilisateur -->
-                    <input type="email" id="email" name="email" required><br>
-                    <!-- Crée un champ de saisie pour le mot de passe de l'utilisateur -->
-                    <input type="password" id="password" name="password" required>
-                </div>
-            </div>
-            <!-- Crée un conteneur pour les boutons -->
-            <div class="button-container">
-                <!-- Crée un bouton pour soumettre le formulaire et vérifier les entrées de l'utilisateur -->
-                <input type="submit" value="Connexion">
-                <!-- Crée un bouton pour rediriger l'utilisateur vers la page d'inscription -->
-                <button type="button" onclick="window.location.href='register'">Créer un nouveau compte</button>
-            </div>
-        </form>
-    </div>
-
-    <!-- Lie le fichier JavaScript à la page HTML -->
-    <script src="{{ asset('../../../js/main.js') }}"></script>
-
+<label for="toggle_checkbox" class="switch-label">
+  <div id="star">
+    <div class="star" id="star-1">★</div>
+    <div class="star" id="star-2">★</div>
+  </div>
+  <div id="moon"></div>
+</label>
+<script src="{{ mix('../js/app.js') }}"></script>
 </body>
-
 </html>

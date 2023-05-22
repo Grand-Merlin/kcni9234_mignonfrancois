@@ -1,254 +1,214 @@
-/* Style général pour le corps de la page */
+/* Définit le corps de la page */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    position: relative; /* Nouveau */
-}
-#background-div {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 95vw; /* 90% de la largeur de la fenêtre du navigateur */
-    height: 90vh; /* 80% de la hauteur de la fenêtre du navigateur */
-    transform: translate(-50%, -50%);
-    overflow: hidden;  /* cache tout ce qui déborde du div */
-    border-radius: 2%;  /* arrondit les bords du div */
-    z-index: 0;  /* place le div derrière le reste du contenu */
+    display: flex; /* Indique que le corps utilise un modèle de disposition flex */
+    flex-direction: column; /* Définit l'orientation principale comme verticale */
+    justify-content: center; /* Centrer le contenu le long de l'axe principal */
+    align-items: center; /* Centrer le contenu le long de l'axe transversal */
+    height: 100vh; /* Hauteur totale de la fenêtre de visualisation */
+    margin: 0; /* Aucune marge autour du corps */
+    transition: background-color 0.5s ease; /* Transition douce pour les changements de couleur d'arrière-plan */
 }
 
-
-.background, .background_dark {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: opacity 1s ease-in-out;
-    z-index: -1; /* Nouveau */
-}
-
-.background {
-    width: 100%;
-    height: 100%;
-    background-image: url(/images/background.jpg?3a648390eb1d48632834a27534090e1a);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    transition: background-image 1s ease-in-out;
-}
-
-.background_dark {
-    background-image: url(/images/background_dark.jpg?ed2d3ab4a20b4fb782c729316cfa6717);
-    opacity: 0;
-}
-
-#content-div {
-    position: relative;
-    z-index: 1;  /* place le contenu devant #background-div */
-}
-
-body.dark-mode .background {
-    opacity: 0;
-}
-
-body.dark-mode .background_dark {
-    opacity: 1;
-}
-
-form, .button-container {
-    position: relative;
-    z-index: 1;
-}
-
-/* Votre code CSS actuel... */
-
-body.dark-mode {
-    background-color: #333;
-    color: #fff;
-}
-
+/* Définit l'apparence du formulaire */
 form {
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    display: grid; /* Indique que le formulaire utilise un modèle de grille */
+    grid-template-columns: auto 1fr; /* Définit les colonnes de la grille */
+    gap: 10px; /* Espacement entre les éléments de la grille */
+    width: 30%; /* Largeur du formulaire */
+    margin: auto; /* Centrer le formulaire */
+    padding: 20px; /* Espace autour du contenu du formulaire */
+    border-radius: 10px; /* Rayon de la bordure du formulaire */
+    transition: background-color 0.5s ease; /* Transition douce pour les changements de couleur d'arrière-plan */
 }
 
-label, input {
-    margin-bottom: 10px;
-    display: block;
+/* Définit l'apparence du groupe de formulaire */
+.form-group {
+    display: contents; /* Pas de boîte de rendu générée pour l'élément */
 }
 
-.button-container {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin-top: 10px;
+/* Définit l'apparence de l'étiquette du groupe de formulaire */
+.form-group label {
+    padding: 10px 0; /* Espace autour du contenu de l'étiquette */
+    text-align: left; /* Alignement du texte à gauche */
 }
 
-button, input[type="submit"] {
-    height: 50px;
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    line-height: 50px;
+/* Définit l'apparence de l'entrée du groupe de formulaire */
+.form-group input {
+    padding: 10px; /* Espace autour du contenu de l'entrée */
+    border: 1px solid #ccc; /* Bordure autour de l'entrée */
+    border-radius: 4px; /* Rayon de la bordure de l'entrée */
 }
 
-button:hover, input[type="submit"]:hover {
-    background-color: #1e7e34;
+/* Définit l'apparence de l'entrée de type "checkbox" du groupe de formulaire */
+.form-group input[type="checkbox"] {
+    width: auto; /* Largeur automatique pour la case à cocher */
+    margin: 0 10px 0 0; /* Marge autour de la case à cocher */
 }
 
-.input-container {
-    display: flex;
-    gap: 20px;
-    width: 70%; /* Ajustez cette valeur selon vos préférences */
-    margin: 0 auto; /* Centrer le conteneur */
+/* Définit l'apparence du bouton du groupe de formulaire */
+.form-group button {
+    padding: 10px 20px; /* Espace autour du contenu du bouton */
+    margin: 10px; /* Marge autour du bouton */
+    border: none; /* Pas de bordure pour le bouton */
+    border-radius: 4px; /* Rayon de la bordure du bouton */
+    cursor: pointer; /* Le curseur devient un pointeur lorsqu'il survole le bouton */
 }
 
-.input-container div {
-    width: 48%; /* Espace pour chaque colonne */
+/* Définit l'apparence du bouton "cancel" */
+#cancel {
+    background-color: #f44336; /* Couleur d'arrière-plan rouge */
+    color: white; /* Couleur de texte blanche */
 }
 
-.input-container label, .input-container input, .input-container textarea {
-    display: block; /* Les éléments prennent toute la largeur disponible */
-    margin-bottom: 10px; /* Espace entre les éléments */
+/* Définit l'apparence du bouton "register" */
+#register {
+    background-color: #4CAF50; /* Couleur d'arrière-plan verte*/
+    color: white; /* Couleur de texte blanche */
 }
 
-/* Votre code CSS actuel pour le switch... */
-
-body, form, button, input[type="submit"] {
-    transition: background-color 0.5s ease, color 0.5s ease;
+/* Définit l'apparence du bouton "login" */
+#login {
+    background-color: #4CAF50; /* Couleur d'arrière-plan verte */
+    color: white; /* Couleur de texte blanche */
 }
 
-body.dark-mode {
-    background-color: #333;
-    color: #fff;
+/* Définit l'apparence du bouton "create-account" */
+#create-account {
+    background-color: #4CAF50; /* Couleur d'arrière-plan verte */
+    color: white; /* Couleur de texte blanche */
 }
 
-form.dark-mode {
-    background-color: #444;
-    border-color: #666;
+/* Définit l'apparence du conteneur de formulaire */
+.form-container {
+    display: flex; /* Indique que le conteneur utilise un modèle de disposition flex */
+    justify-content: center; /* Centrer le contenu le long de l'axe principal */
+    align-items: center; /* Centrer le contenu le long de l'axe transversal */
+    width: 90%; /* Largeur du conteneur */
+    height: 90vh; /* Hauteur du conteneur */
+    margin: auto; /* Centrer le conteneur */
+    background-image: url(/images/background.png?396e49b58520febf068369816214d643); /* Image d'arrière-plan du conteneur */
+    background-size: cover; /* L'image d'arrière-plan couvre tout le conteneur */
+    background-position: center; /* Position de l'image d'arrière-plan au centre */
+    padding: 20px; /* Espace autour du contenu du conteneur */
+    border-radius: 10px; /* Rayon de la bordure du conteneur */
+    transition: background-image 0.5s ease; /* Transition douce pour les changements d'image d'arrière-plan */
 }
 
-button.dark-mode, input[type="submit"].dark-mode {
-    background-color: #555;
-}
-
-button.dark-mode:hover, input[type="submit"].dark-mode:hover {
-    background-color: #666;
-}
-
-/* Votre code CSS pour le switch... */
-
+/* Définit l'apparence de l'interrupteur du mode sombre */
 #toggle_checkbox {
-    display: none;
+    display: none; /* L'interrupteur est caché */
 }
 
-label[for="toggle_checkbox"] {
-    display: block;
-    position: fixed;
-    top: 30px;
-    right: 20px;
-    width: 116px;
-    height: 56px;
-    margin: 0 auto;
-    background-color: #77b5fe;
-    border-radius: 56px;
-    cursor: pointer;
-    transition: 0.3s ease background-color;
-    overflow: hidden;
+/* Définit l'apparence de l'étiquette de l'interrupteur */
+.switch-label {
+    display: block; /* L'étiquette est affichée comme un bloc */
+    position: absolute; /* Position absolue de l'étiquette */
+    top: 40px; /* Position supérieure de l'étiquette */
+    right: 100px; /* Position à droite de l'étiquette */
+    width: 116px; /* Largeur de l'étiquette */
+    height: 56px; /* Hauteur de l'étiquette */
+    background-color: #77b5fe; /* Couleur d'arrière-plan de l'étiquette */
+    border-radius: 56px; /* Rayon de la bordure de l'étiquette */
+    cursor: pointer; /* Le curseur devient un pointeur lorsqu'il survole l'étiquette */
+    transition: 0.3s ease background-color; /* Transition douce pour les changements de couleur d'arrière-plan de l'étiquette */
+    overflow: hidden; /* Cache les débordements de contenu */
 }
 
+/* Définit l'apparence de l'étoile */
 #star {
-    position: absolute;
-    top: 13px;
-    left: 13px;
-    width: 30px;
-    height: 30px;
-    background-color: #fafd0f;
-    transform: scale(1);
-    border-radius: 50%;
-    transition: 0.3s ease top, 0.3s ease left, 0.3s ease transform, 0.3s ease background-color;
-    z-index: 1;
+    position: absolute; /* Position absolue de l'étoile */
+    top: 13px; /* Position supérieure de l'étoile */
+    left: 13px; /* Position à gauche de l'étoile */
+    width: 30px; /* Largeur de l'étoile */
+    height: 30px; /* Hauteur de l'étoile */
+    background-color: #fafd0f; /* Couleur d'arrière-plan de l'étoile */
+    transform: scale(1); /* Échelle de l'étoile */
+    border-radius: 50%; /* Rayon de la bordure de l'étoile */
+    transition: 0.3s ease top, 0.3s ease left, 0.3s ease transform, 0.3s ease background-color; /* Transition douce pour les changements de position, de transformation et de couleur d'arrière-plan de l'étoile */
+    z-index: 1; /* Position de l'étoile sur l'axe z */
 }
 
-#star-1 {
-    position: relative;
-}
-
-#star-2 {
-    position: absolute;
-    transform: rotateZ(36deg);
-}
-
-.star {
-    top: 0;
-    left: -7px;
-    font-size: 54px;
-    line-height: 28px;
-    color: #fafd0f;
-    transition: 0.3s ease color;
-}
-
+/* Définit l'apparence de la lune */
 #moon {
-    position: absolute;
-    bottom: -52px;
-    right: 8px;
-    width: 40px;
-    height: 40px;
-    background-color: #fff;
-    border-radius: 50%;
-    transition: 0.3s ease bottom;
+    position: absolute; /* Position absolue de la lune */
+    bottom: -52px; /* Position inférieure de la lune */
+    right: 8px; /* Position à droite de la lune */
+    width: 40px; /* Largeur de la lune */
+    height: 40px; /* Hauteur de la lune */
+    background-color: #fff; /* Couleur d'arrière-plan blanche de la lune */
+    border-radius: 50%; /* Rayon de la bordure de la lune */
+    transition: 0.3s ease bottom; /* Transition douce pour les changements de position inférieure de la lune */
 }
 
+/* Définit l'apparence du pseudo-élément "before" de la lune */
 #moon:before {
-    content: "";
-    position: absolute;
-    top: -12px;
-    left: -17px;
-    width: 40px;
-    height: 40px;
-    background-color: #03a9f4;
-    border-radius: 50%;
-    transition: 0.3s ease background-color;
+    content: ""; /* Pas de contenu pour le pseudo-élément "before" */
+    position: absolute; /* Position absolue du pseudo-élément "before" */
+    top: -12px; /* Position supérieure du pseudo-élément "before" */
+    left: -17px; /* Position à gauche du pseudo-élément "before" */
+    width: 40px; /* Largeur du pseudo-élément "before" */
+    height: 40px; /* Hauteur du pseudo-élément "before" */
+    background-color:#03a9f4; /* Couleur d'arrière-plan du pseudo-élément "before" */
+    border-radius: 50%; /* Rayon de la bordure du pseudo-élément "before" */
+    transition: 0.3s ease background-color; /* Transition douce pour les changements de couleur d'arrière-plan du pseudo-élément "before" */
 }
 
-#toggle_checkbox:checked+label {
-    background-color: #000;
+/* Définit l'apparence de l'étiquette lorsque l'interrupteur est coché */
+#toggle_checkbox:checked + label {
+    background-color: #000; /* Couleur d'arrière-plan noire */
 }
 
-#toggle_checkbox:checked+label #star {
-    top: 3px;
-    left: 64px;
-    transform: scale(0.3);
-    background-color: yellow;
+/* Définit l'apparence de l'étoile lorsque l'interrupteur est coché */
+#toggle_checkbox:checked + label #star {
+    top: 3px; /* Position supérieure de l'étoile */
+    left: 64px; /* Position à gauche de l'étoile */
+    transform: scale(0.3); /* Échelle de l'étoile */
+    background-color: yellow; /* Couleur d'arrière-plan jaune */
 }
 
-#toggle_checkbox:checked+label .star {
-    color: white;
+/* Définit l'apparence de la lune lorsque l'interrupteur est coché */
+#toggle_checkbox:checked + label #moon {
+    bottom: 8px; /* Position inférieure de la lune */
 }
 
-#toggle_checkbox:checked+label #moon {
-    bottom: 8px;
+/* Définit l'apparence du pseudo-élément "before" de la lune lorsque l'interrupteur est coché */
+#toggle_checkbox:checked + label #moon:before {
+    background-color: #000; /* Couleur d'arrière-plan noire */
 }
 
-#toggle_checkbox:checked+label #moon:before {
-    background-color: #000;
+/* Styles spécifiques aux écrans de tablettes */
+@media (max-width: 768px) {
+    form {
+        width: 70%; /* Largeur du formulaire sur tablette */
+        grid-template-columns: 1fr; /* Les éléments du formulaire passent à la verticale sur tablette */
+    }
+
+    .form-container {
+        width: 80%; /* Largeur du conteneur du formulaire sur tablette */
+        height: 80vh; /* Hauteur du conteneur du formulaire sur tablette */
+    }
+
+    .switch-label {
+        top: 20px; /* Position supérieure de l'étiquette d'interrupteur sur tablette */
+        right: 50px; /* Position à droite de l'étiquette d'interrupteur sur tablette */
+    }
+}
+
+/* Styles spécifiques aux écrans de mobiles */
+@media (max-width: 480px) {
+    form {
+        width: 90%; /* Largeur du formulaire sur mobile */
+        grid-template-columns: 1fr; /* Les éléments du formulaire passent à la verticale sur mobile */
+    }
+
+    .form-container {
+        width: 95%; /* Largeur du conteneur du formulaire sur mobile */
+        height: 70vh; /* Hauteur du conteneur du formulaire sur mobile */
+    }
+
+    .switch-label {
+        top: 10px; /* Position supérieure de l'étiquette d'interrupteur sur mobile */
+        right: 20px; /* Position à droite de l'étiquette d'interrupteur sur mobile */
+    }
 }
 

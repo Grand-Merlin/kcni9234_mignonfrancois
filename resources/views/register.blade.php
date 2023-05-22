@@ -1,69 +1,64 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <!-- Définit le titre de la page -->
-    <title>Formulaire d'inscription</title>
-    <!-- Lie la feuille de style CSS à la page HTML -->
-    <link rel="stylesheet" href="{{ asset('../../../css/styles.css') }}">
+    <title>Formulaire</title>
+    <link href="{{ mix('/css/styles.css') }}" rel="stylesheet">
 </head>
-
 <body>
-    <div id="background-div">
-        <div class="background"></div>
-        <div class="background background_dark"></div>
-    </div>
-
-    <div id="content-div">
-        <!-- Ajoute un bouton bascule pour le thème sombre -->
-        <input type="checkbox" id="toggle_checkbox">
-        <label for="toggle_checkbox">
-            <div id="star">
-                <div class="star" id="star-1">★</div>
-                <div class="star" id="star-2">★</div>
-            </div>
-            <div id="moon"></div>
-        </label>
-        
-        <div id="registration-form">
-            <form action="/registerUser" method="post">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                @csrf
-                <div class="input-container">
-                    <div>
-                        <label for="email">Email*:</label>
-                        <label for="email-verification">Email de vérification*:</label>
-                        <label for="password">Mot de passe*:</label>
-                        <label for="password-verification">Vérification du mot de passe*:</label>
-                        <label for="fullname">Nom Prénom*:</label>
-                        <label for="address">Adresse*:</label>
-                        <label for="country">Pays:</label>
-                        <label for="locality">Localité*:</label>
-                    </div>
-                    <div>
-                        <input type="email" id="email" name="email" required><br>
-                        <input type="email" id="email-verification" name="email-verification" required><br>
-                        <input type="password" id="password" name="password" required><br>
-                        <input type="password" id="password-verification" name="password-verification" required><br>
-                        <input type="text" id="fullname" name="fullname" required><br>
-                        <textarea id="address" name="address" required></textarea><br>
-                        <input type="text" id="country" name="country"><br>
-                        <input type="text" id="locality" name="locality" required><br>
-                        <input type="checkbox" id="terms" name="terms" required>
-                        <label for="terms">J'accepte les <a href="/terms-and-conditions">Conditions Générales</a>*</label><br>
-                    </div>
-                </div>
-                <div class="button-container">
-                    <input type="submit" value="Inscription">
-                    <button type="button" onclick="window.location.href='/'">Annuler</button>
-                </div>
-            </form>
+<div class="form-container">
+    <form id="login-form" method="POST" action="/registerUser" novalidate>
+        <div class="form-group">
+            <label for="email">Adresse e-mail* :</label>
+            <input type="email" id="email" name="email" required>
         </div>
-    </div>
-    
-    <!-- Lie le fichier JavaScript à la page HTML -->
-    <script src="{{ asset('../../../js/main.js') }}"></script>
+        <div class="form-group">
+            <label for="confirm-email">Confirmez l'adresse e-mail :</label>
+            <input type="email" id="confirm-email" name="confirm-email">
+        </div>
+        <div class="form-group">
+            <label for="password">Mot de passe* :</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <label for="confirm-password">Confirmez le mot de passe :</label>
+            <input type="password" id="confirm-password" name="confirm-password">
+        </div>
+        <div class="form-group">
+            <label for="fullname">Nom complet* :</label>
+            <input type="text" id="fullname" name="fullname" required>
+        </div>
+        <div class="form-group">
+            <label for="address">Adresse postale* :</label>
+            <input type="text" id="address" name="address" required>
+        </div>
+        <div class="form-group">
+            <label for="country">Pays de résidence :</label>
+            <input type="text" id="country" name="country">
+        </div>
+        <div class="form-group">
+            <label for="locality">Localité* :</label>
+            <input type="text" id="locality" name="locality" required>
+        </div>
+	<div class="form-group">
+    <input type="checkbox" id="terms" name="terms" required>
+    <label for="terms">J'accepte les <a href="cgu.html">Conditions Générales d'Utilisation</a>*</label>
+</div>
+<div class="form-group">
+    <button type="reset" id="cancel">Annuler</button>
+    <button type="submit" id="register">Inscription</button>
+</div>
 
+    </form>
+ </div>
+<input type="checkbox" id="toggle_checkbox">
+
+<label for="toggle_checkbox" class="switch-label">
+  <div id="star">
+    <div class="star" id="star-1">★</div>
+    <div class="star" id="star-2">★</div>
+  </div>
+  <div id="moon"></div>
+</label>
+<script src="{{ asset('/js/main.js') }}"></script>
 </body>
-
 </html>
