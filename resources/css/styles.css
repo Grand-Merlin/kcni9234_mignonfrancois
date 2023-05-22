@@ -95,6 +95,22 @@ form {
 }
 
 /* Définit l'apparence de l'interrupteur du mode sombre */
+*
+{
+    user-select: none;  
+}
+
+html, body
+{
+    height: 100%;
+}
+
+body
+{
+    margin: 0;
+    background-color: #fff;
+}
+
 #toggle_checkbox {
     display: none; /* L'interrupteur est caché */
 }
