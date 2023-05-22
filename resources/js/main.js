@@ -29,13 +29,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
             body.style.backgroundColor = '#333';
             body.style.color = '#f9f4e1'; 
             form.style.backgroundColor = '#333';
-            formContainer.style.backgroundImage = "url('background_dark.png')";
+            formContainer.style.backgroundImage = "url('/images/background_dark.png')";
         } else {
             /* Passage en mode clair */
             body.style.backgroundColor = '#f9f4e1'; 
             body.style.color = '#000'; 
             form.style.backgroundColor = '#f9f4e1'; 
-            formContainer.style.backgroundImage = "url('background.png')";
+            formContainer.style.backgroundImage = "url('/images/background.png')";
         }
     });
 });

@@ -2,5 +2,20 @@
     "/js/app.js": "/js/app.js",
     "/js/main.js": "/js/main.js",
     "/css/app.css": "/css/app.css",
-    "/css/styles.css": "/css/styles.css"
+    "/css/styles.css": "/css/styles.css",
+    "/images/background.png": "/images/background.png",
+    "/images/background_dark.png": "/images/background_dark.png",
+    "/images/bien01.jpg": "/images/bien01.jpg",
+    "/images/bien02.jpg": "/images/bien02.jpg",
+    "/images/bien03.jpg": "/images/bien03.jpg",
+    "/images/bien04.jpg": "/images/bien04.jpg",
+    "/images/bien05.jpg": "/images/bien05.jpg",
+    "/images/bien06.jpg": "/images/bien06.jpg",
+    "/images/bien08.jpg": "/images/bien08.jpg",
+    "/images/bien09.jpg": "/images/bien09.jpg",
+    "/images/bien10.jpg": "/images/bien10.jpg",
+    "/images/bien11.jpg": "/images/bien11.jpg",
+    "/images/bien12.jpg": "/images/bien12.jpg",
+    "/images/bien13.jpg": "/images/bien13.jpg",
+    "/images/bien14.jpg": "/images/bien14.jpg"
 }

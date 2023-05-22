@@ -15,4 +15,5 @@ mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/main.js', 'public/js')
     .css('resources/css/styles.css', 'public/css')
     .sass('resources/sass/app.scss', 'public/css')
+    .copy('resources/img', 'public/images')
     .sourceMaps();
