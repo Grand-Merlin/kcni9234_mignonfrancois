@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Formulaire</title>
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    <link href="{{ asset('../css/styles.css') }}" rel="stylesheet">
 </head>
 <body>
 <div class="form-container">
@@ -59,6 +59,6 @@
   </div>
   <div id="moon"></div>
 </label>
-<script src="{{ asset('/js/main.js') }}"></script>
+<script src="{{ asset('../js/main.js') }}"></script>
 </body>
 </html>
