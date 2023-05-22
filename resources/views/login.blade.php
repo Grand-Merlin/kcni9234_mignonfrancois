@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Formulaire</title>
-    <link href="{{ asset('../css/styles.css') }}" rel="stylesheet">
+    <link href="{{ mix('/css/styles.css') }}" rel="stylesheet">
 </head>
 <body>
 <div class="form-container">
