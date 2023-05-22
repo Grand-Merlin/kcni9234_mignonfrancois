@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Formulaire</title>
-    <link href="{{ mix('css/styles.css') }}" rel="stylesheet">
+    <link href="{{ mix('/css/styles.css') }}" rel="stylesheet">
 </head>
 <body>
 <div class="form-container">
@@ -29,6 +29,6 @@
   </div>
   <div id="moon"></div>
 </label>
-<script src="{{ mix('js/main.js') }}"></script>
+<script src="{{ mix('/js/main.js') }}"></script>
 </body>
 </html>
