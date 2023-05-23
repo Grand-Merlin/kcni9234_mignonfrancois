@@ -13,7 +13,7 @@
             <p class="welcome-text">Bienvenue, {{ Auth::user()->name }}</p>
             <div class="header-buttons">
             <a href="{{ url('/immobilier') }}" class="btn">Ajouter</a>
-                <form method="POST" action="{{ route('logout') }}">
+                <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <button class="btn">Déconnexion</button>
                 </form>
