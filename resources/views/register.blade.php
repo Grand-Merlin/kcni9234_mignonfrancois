@@ -43,6 +43,7 @@
 	<div class="form-group">
     <input type="checkbox" id="terms" name="terms" required>
     <label for="terms">J'accepte les <a href="cgu.html">Conditions Générales d'Utilisation</a>*</label>
+    
 </div>
 <div class="form-group">
     <button type="reset" id="cancel">Annuler</button>
