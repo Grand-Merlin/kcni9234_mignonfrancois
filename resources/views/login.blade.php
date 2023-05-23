@@ -21,9 +21,8 @@
         </div>
     </form>
  </div>
- <input type="checkbox" id="toggle_checkbox">
-
-<label for="toggle_checkbox">
+<input type="checkbox" id="toggle_checkbox">
+<label for="toggle_checkbox" class="switch-label">
   <div id="star">
     <div class="star" id="star-1">★</div>
     <div class="star" id="star-2">★</div>
