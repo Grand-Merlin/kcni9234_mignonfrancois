@@ -8,8 +8,13 @@ $(document).ready(function () {
     var confirmPasswordInput = $('#confirm-password');
     var passwordValidationIcon = $('#password-validation-icon');
     var confirmPasswordValidationIcon = $('#confirm-password-validation-icon');
-    var passwordValidationIcon = $('#password-validation-icon');
-    var confirmPasswordValidationIcon = $('#confirm-password-validation-icon');
+
+    /* Récupération des éléments e-mail et de confirmation d'e-mail */
+    var emailInput = $('#email');
+    var confirmEmailInput = $('#confirm-email');
+    var emailValidationIcon = $('#email-validation-icon');
+    var confirmEmailValidationIcon = $('#confirm-email-validation-icon');
+
 
     /* Désactivation temporaire des transitions */
     body.css('transition', 'none');
@@ -69,13 +74,10 @@ $(document).ready(function () {
         }
     }
 
-    /* Récupération des éléments e-mail et de confirmation d'e-mail */
-    var emailInput = $('#email');
-    var confirmEmailInput = $('#confirm-email');
-
     /* Interdiction du copier/coller dans le champ de confirmation d'e-mail */
     confirmEmailInput.on('paste', function (event) {
         event.preventDefault();
+        alert("Il n'est pas possible de coller dans ce champ.");
     });
 
     /* Empêcher le copier/coller dans le champ de confirmation du mot de passe */
@@ -90,18 +92,18 @@ $(document).ready(function () {
             /* Récupération de l'e-mail et du mot de passe des champs de saisie */
             var email = emailInput.val();
             var password = passwordInput.val();
-            
+
             /* Si l'e-mail n'est pas valide, si les e-mails ne correspondent pas ou si le mot de passe n'est pas valide, blocage de la soumission du formulaire */
             if (!validateEmail(email)) {
                 alert('Veuillez entrer une adresse e-mail valide.');
                 event.preventDefault();
-            } else if (email !== confirmEmail) {
+            } else if (email !== confirmEmailInput.val()) {
                 alert('Les adresses e-mail ne correspondent pas.');
                 event.preventDefault();
             } else if (!validatePassword(password)) {
                 alert('Le mot de passe doit contenir au moins une lettre minuscule, une lettre majuscule, un chiffre, un caractère spécial et avoir une longueur minimale de 8 caractères.');
                 event.preventDefault();
-            } else if (password !== confirmPassword) {
+            } else if (password !== confirmPasswordInput.val()) {
                 alert('Les mots de passe ne correspondent pas.');
                 event.preventDefault();
             }
@@ -127,13 +129,23 @@ $(document).ready(function () {
         return re.test(password);
     }
 
+    confirmEmailInput.on('input', function () {
+        if (emailInput.val() === confirmEmailInput.val()) {
+            // Si les emails correspondent, afficher l'icône de succès
+            confirmEmailValidationIcon.attr('src', '/images/icon_success.png');
+        } else {
+            // Si les emails ne correspondent pas, afficher l'icône d'erreur
+            confirmEmailValidationIcon.attr('src', '/images/icon_error.png');
+        }
+    });
+
     passwordInput.on('input', function () {
         if (validatePassword(passwordInput.val())) {
             // Si le mot de passe est valide, affichez l'icône de succès
             passwordValidationIcon.attr('src', '/images/icon_success.png');
         } else {
             // Si le mot de passe n'est pas valide, affichez l'icône d'erreur
-            passwordValidationIcon.attr('src', '/images/icon_success.png');
+            passwordValidationIcon.attr('src', '/images/icon_error.png');
         }
     });
 
@@ -143,7 +155,7 @@ $(document).ready(function () {
             confirmPasswordValidationIcon.attr('src', '/images/icon_success.png');
         } else {
             // Si les mots de passe ne correspondent pas, affichez l'icône d'erreur
-            confirmPasswordValidationIcon.attr('src', '/images/icon_success.png');
+            confirmPasswordValidationIcon.attr('src', '/images/icon_error.png');
         }
     });
 
