@@ -32,13 +32,13 @@
 
     <div class="grid-container-wrapper">
         <div class="grid-container">
-            @foreach($properties as $property)
+            @foreach($propriete as $prop)
                 <div class="grid-item">
-                    <img src="{{ asset('images/' . $property->image) }}" alt="{{ $property->description }}">
-                    <p class="description">{{ $property->description }}</p>
-                    <p class="type">Type de bien: {{ $property->type }}</p>
-                    <p class="price">Prix: {{ $property->price }}€</p>
-                    <p class="status">État: {{ $property->status }}</p>
+                    <img src="{{ asset('images/' . $prop->images) }}" alt="{{ $prop->desc }}">
+                    <p class="description">{{ $prop->desc }}</p>
+                    <p class="type">Type de bien: {{ $prop->type_bien }}</p>
+                    <p class="price">Prix: {{ $prop->prix }}€</p>
+                    <p class="status">État: {{ $prop->etat }}</p>
                 </div>
             @endforeach
         </div>
@@ -49,14 +49,14 @@
         <button type="submit">Déconnexion</button>
     </form>
     <input type="checkbox" id="toggle_checkbox">
-<label for="toggle_checkbox" class="switch-label">
-  <div id="star">
-    <div class="star" id="star-1">★</div>
-    <div class="star" id="star-2">★</div>
-  </div>
-  <div id="moon"></div>
-</label>
+    <label for="toggle_checkbox" class="switch-label">
+      <div id="star">
+        <div class="star" id="star-1">★</div>
+        <div class="star" id="star-2">★</div>
+      </div>
+      <div id="moon"></div>
+    </label>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-<script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
 </body>
 </html>
