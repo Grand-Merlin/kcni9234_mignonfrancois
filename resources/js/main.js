@@ -20,18 +20,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     /* Application de l'état du mode sombre */
     toggleCheckbox.checked = isDarkMode;
-    if (isDarkMode) {
-        body.classList.add('dark-mode'); // Supposez que vous ayez une classe 'dark-mode' qui applique le mode sombre
-    } else {
-        body.classList.remove('dark-mode');
-    }
+    applyDarkMode(isDarkMode);
 
     /* Gestion du changement d'état du mode sombre */
     toggleCheckbox.addEventListener('change', () => {
-        body.classList.toggle('dark-mode', toggleCheckbox.checked);
+        const isDark = toggleCheckbox.checked;
+        body.classList.toggle('dark-mode', isDark);
 
         /* Mise à jour de l'état du mode sombre dans le localStorage */
-        localStorage.setItem('darkMode', toggleCheckbox.checked);
+        localStorage.setItem('darkMode', isDark);
+
+        /* Appliquer les changements d'arrière-plan et de couleur en fonction de l'état du mode sombre */
+        applyDarkMode(isDark);
     });
 
     /* Réactivation des transitions après un court délai */
@@ -41,9 +41,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
         formContainer.style.transition = '';
     }, 100);
 
-    /* Écoute du changement d'état du bouton bascule */
-    toggleCheckbox.addEventListener('change', function () {
-        if (this.checked) {
+    /* Ajout d'un écouteur d'événements "click" au bouton d'annulation */
+    document.getElementById('cancel').addEventListener('click', function () {
+        window.location.href = '/devweb'; // Remplacez "/devweb" par votre URL
+    });
+
+    function applyDarkMode(isDark) {
+        if (isDark) {
             /* Passage en mode sombre */
             body.style.backgroundColor = '#333';
             body.style.color = '#f9f4e1';
@@ -56,12 +60,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             form.style.backgroundColor = '#f9f4e1';
             formContainer.style.backgroundImage = "url('/images/background.png')";
         }
-    });
-
-    /* Ajout d'un écouteur d'événements "click" au bouton d'annulation */
-    document.getElementById('cancel').addEventListener('click', function () {
-        window.location.href = '/devweb'; // Remplacez "/devweb" par votre URL
-    });
+    }
 });
 
 /* Fonction pour valider une adresse e-mail */
