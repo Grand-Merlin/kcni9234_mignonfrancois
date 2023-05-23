@@ -38,8 +38,6 @@ Route::get('/register', [RegisterUserController::class, 'showForm']);
 Route::post('/login', [LoginController::class, 'login'])->name('login'); // Formulaire de connexion
 Route::post('/logout', [LoginController::class, 'logout']); // Route pour déconnecter l'utilisateur
 
-// Page d'accueil
-Route::get('/immobilier', [PropertyController::class, 'index'])->name('immobilier');
 
 // Ajout de biens
 // Note: Ceci nécessiterait probablement une méthode POST également pour traiter le formulaire d'ajout
