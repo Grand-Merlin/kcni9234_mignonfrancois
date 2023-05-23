@@ -34,7 +34,7 @@ Route::get('/immobilier', function () {
 });
 
 Route::get('/register', [RegisterUserController::class, 'showForm']);
-Route::post('/devweb', [LoginController::class, 'login']);
+Route::post('/immobilier', [LoginController::class, 'login']);
 Route::post('/devweb', [LoginController::class, 'logout']);
 //Route::post('/registerUser', [RegisterUserController::class'']);
 
