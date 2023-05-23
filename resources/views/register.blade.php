@@ -3,6 +3,8 @@
 <head>
     <title>Formulaire</title>
     <link href="{{ asset('../css/styles.css') }}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 <body>
 <div class="form-container">
