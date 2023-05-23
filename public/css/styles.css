@@ -146,6 +146,27 @@ body
     z-index: 1; /* Position de l'étoile sur l'axe z */
 }
 
+#star-1
+{
+    position: relative;
+}
+
+#star-2
+{
+    position: absolute;
+    transform: rotateZ(36deg);
+}
+
+.star
+{
+    top: 0;
+    left: -7px;
+    font-size: 54px;
+    line-height: 28px;
+    color: #fafd0f;
+    transition: 0.3s ease color;
+}
+
 /* Définit l'apparence de la lune */
 #moon {
     position: absolute; /* Position absolue de la lune */
