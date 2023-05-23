@@ -11,18 +11,22 @@
         <div class="form-group">
             <label for="email">Adresse e-mail* :</label>
             <input type="email" id="email" name="email" required>
+            <img id="password-validation-icon" src="" alt="" class="validation-icon">
         </div>
         <div class="form-group">
             <label for="confirm-email">Confirmez l'adresse e-mail :</label>
             <input type="email" id="confirm-email" name="confirm-email">
+            <img id="password-validation-icon" src="" alt="" class="validation-icon">
         </div>
         <div class="form-group">
             <label for="password">Mot de passe* :</label>
             <input type="password" id="password" name="password" required>
+            <img id="password-validation-icon" src="" alt="" class="validation-icon">
         </div>
         <div class="form-group">
             <label for="confirm-password">Confirmez le mot de passe :</label>
             <input type="password" id="confirm-password" name="confirm-password">
+            <img id="password-validation-icon" src="" alt="" class="validation-icon">
         </div>
         <div class="form-group">
             <label for="fullname">Nom complet* :</label>
@@ -43,7 +47,7 @@
 	<div class="form-group">
     <input type="checkbox" id="terms" name="terms" required>
     <label for="terms">J'accepte les <a href="cgu.html">Conditions Générales d'Utilisation</a>*</label>
-    
+
 </div>
 <div class="form-group">
     <button type="reset" id="cancel">Annuler</button>
