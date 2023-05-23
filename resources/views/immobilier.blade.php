@@ -12,7 +12,7 @@
             <h1>Gestion des biens immobiliers</h1>
             <p class="welcome-text">Bienvenue, {{ Auth::user()->name }}</p>
             <div class="header-buttons">
-                <a href="{{ route('/immobilier') }}" class="btn">Ajouter</a>
+            <a href="{{ url('/immobilier') }}" class="btn">Ajouter</a>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button class="btn">Déconnexion</button>
