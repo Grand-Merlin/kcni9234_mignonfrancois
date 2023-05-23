@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterUserController;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ImmobilierController;
 
 
 /*
@@ -33,3 +34,5 @@ Route::get('/immobilier', function () {
 Route::get('/register', [RegisterUserController::class, 'showForm']);
 Route::post('/login', [LoginController::class, 'login'])->name('login'); // Formulaire de connexion
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout'); // Route pour déconnecter l'utilisateur
+Route::get('/myProperties', [ImmobilierController::class, 'getMyProperties']);//Ajoute mes bien immobillier dans la page
+Route::get('/allProperties', [ImmobilierController::class, 'getAllProperties']);
