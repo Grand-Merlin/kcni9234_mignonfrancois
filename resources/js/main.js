@@ -89,18 +89,21 @@ $(document).ready(function () {
             // Récupération de l'e-mail et du mot de passe des champs de saisie
             var email = emailInput.val();
             var password = passwordInput.val();
-
-            // Si l'e-mail n'est pas valide ou si le mot de passe n'est pas valide, blocage de la soumission du formulaire
+    
+            // Si l'e-mail n'est pas valide, blocage de la soumission du formulaire
             if (!validateEmail(email)) {
                 alert('Veuillez entrer une adresse e-mail valide.');
                 event.preventDefault();
-            } else if (!validatePassword(password)) {
-                alert('Le mot de passe doit contenir au moins une lettre minuscule, une lettre majuscule, un chiffre, un caractère spécial et avoir une longueur minimale de 8 caractères.');
-                event.preventDefault();
             }
-
+    
             // Sur la page d'inscription, vérifiez que les e-mails et les mots de passe correspondent
             if (formId === 'register-form') {
+                // Si le mot de passe n'est pas valide, blocage de la soumission du formulaire
+                if (!validatePassword(password)) {
+                    alert('Le mot de passe doit contenir au moins une lettre minuscule, une lettre majuscule, un chiffre, un caractère spécial et avoir une longueur minimale de 8 caractères.');
+                    event.preventDefault();
+                }
+                
                 if (email !== confirmEmailInput.val()) {
                     alert('Les adresses e-mail ne correspondent pas.');
                     event.preventDefault();
