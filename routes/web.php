@@ -20,7 +20,6 @@ Route::get('/devweb', function () {
     return view('login');
 });
 
-
 Route::get('/register', function () {
     return view('register');
 });
@@ -31,10 +30,9 @@ Route::get('/test', function () {
 
 Route::get('/immobilier', function () {
     return view('immobilier');
-});
+})->middleware('auth'); // Ajouter un middleware pour s'assurer que seuls les utilisateurs authentifiés peuvent accéder à cette page
 
 Route::get('/register', [RegisterUserController::class, 'showForm']);
-Route::post('/devweb', [LoginController::class, 'login']);
-Route::post('/immobilier', [LoginController::class, 'logout']);
-//Route::post('/registerUser', [RegisterUserController::class'']);
+Route::post('/devweb', [LoginController::class, 'login']); // Formulaire de connexion
+Route::post('/logout', [LoginController::class, 'logout']); // Route pour déconnecter l'utilisateur
 
