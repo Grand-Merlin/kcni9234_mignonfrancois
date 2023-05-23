@@ -7,6 +7,7 @@
 <body>
 <div class="form-container">
     <form id="login-form" method="POST" action="/registerUser" novalidate>
+    @csrf
         <div class="form-group">
             <label for="email">Adresse e-mail* :</label>
             <input type="email" id="email" name="email" required>
