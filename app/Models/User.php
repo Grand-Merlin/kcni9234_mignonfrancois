@@ -37,4 +37,10 @@ class User extends Authenticatable
     {
         return $this->PASSWORD;
     }
+
+    public function properties()
+{
+    return $this->hasMany(Property::class, 'ID_USER');  // change 'ID_USER' to your actual foreign key on the properties table
+}
+
 }
