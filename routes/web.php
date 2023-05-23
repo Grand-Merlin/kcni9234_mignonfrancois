@@ -22,10 +22,6 @@ Route::get('/devweb', function () {
     return view('login');
 });
 
-//Route::get('/register', function () {
- //   return view('register');
-//});
-
 Route::get('/test', function () {
     return view('testconndb');
 });
@@ -36,4 +32,4 @@ Route::get('/immobilier', function () {
 
 Route::get('/register', [RegisterUserController::class, 'showForm']);
 Route::post('/login', [LoginController::class, 'login'])->name('login'); // Formulaire de connexion
-Route::post('/logout', [LoginController::class, 'logout']); // Route pour déconnecter l'utilisateur
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout'); // Route pour déconnecter l'utilisateur
