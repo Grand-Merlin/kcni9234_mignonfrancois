@@ -34,10 +34,9 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!**********************************!*\
   !*** ./resources/css/styles.css ***!
   \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9yZXNvdXJjZXMvY3NzL3N0eWxlcy5jc3MuanMiLCJtYXBwaW5ncyI6IjtBQUFBIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vLy4vcmVzb3VyY2VzL2Nzcy9zdHlsZXMuY3NzP2ZlMWMiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gZXh0cmFjdGVkIGJ5IG1pbmktY3NzLWV4dHJhY3QtcGx1Z2luXG5leHBvcnQge307Il0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./resources/css/styles.css\n");
+throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/css-loader/dist/cjs.js):\nError: Can't resolve '../../img/background.png' in 'C:\\Users\\migno\\OneDrive\\Documents\\VSCode\\kcni9234_mignonfrancois\\resources\\css'\n    at finishWithoutResolve (C:\\Users\\migno\\OneDrive\\Documents\\VSCode\\kcni9234_mignonfrancois\\node_modules\\enhanced-resolve\\lib\\Resolver.js:321:18)\n    at C:\\Users\\migno\\OneDrive\\Documents\\VSCode\\kcni9234_mignonfrancois\\node_modules\\enhanced-resolve\\lib\\Resolver.js:398:15\n    at C:\\Users\\migno\\OneDrive\\Documents\\VSCode\\kcni9234_mignonfrancois\\node_modules\\enhanced-resolve\\lib\\Resolver.js:447:5\n    at eval (eval at create (C:\\Users\\migno\\OneDrive\\Documents\\VSCode\\kcni9234_mignonfrancois\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:16:1)\n    at C:\\Users\\migno\\OneDrive\\Documents\\VSCode\\kcni9234_mignonfrancois\\node_modules\\enhanced-resolve\\lib\\Resolver.js:447:5\n    at eval (eval at create (C:\\Users\\migno\\OneDrive\\Documents\\VSCode\\kcni9234_mignonfrancois\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:27:1)\n    at C:\\Users\\migno\\OneDrive\\Documents\\VSCode\\kcni9234_mignonfrancois\\node_modules\\enhanced-resolve\\lib\\DescriptionFilePlugin.js:87:43\n    at C:\\Users\\migno\\OneDrive\\Documents\\VSCode\\kcni9234_mignonfrancois\\node_modules\\enhanced-resolve\\lib\\Resolver.js:447:5\n    at eval (eval at create (C:\\Users\\migno\\OneDrive\\Documents\\VSCode\\kcni9234_mignonfrancois\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at C:\\Users\\migno\\OneDrive\\Documents\\VSCode\\kcni9234_mignonfrancois\\node_modules\\enhanced-resolve\\lib\\Resolver.js:447:5\n    at processResult (C:\\Users\\migno\\OneDrive\\Documents\\VSCode\\kcni9234_mignonfrancois\\node_modules\\webpack\\lib\\NormalModule.js:764:19)\n    at C:\\Users\\migno\\OneDrive\\Documents\\VSCode\\kcni9234_mignonfrancois\\node_modules\\webpack\\lib\\NormalModule.js:866:5\n    at C:\\Users\\migno\\OneDrive\\Documents\\VSCode\\kcni9234_mignonfrancois\\node_modules\\loader-runner\\lib\\LoaderRunner.js:400:11\n    at C:\\Users\\migno\\OneDrive\\Documents\\VSCode\\kcni9234_mignonfrancois\\node_modules\\loader-runner\\lib\\LoaderRunner.js:252:18\n    at context.callback (C:\\Users\\migno\\OneDrive\\Documents\\VSCode\\kcni9234_mignonfrancois\\node_modules\\loader-runner\\lib\\LoaderRunner.js:124:13)\n    at Object.loader (C:\\Users\\migno\\OneDrive\\Documents\\VSCode\\kcni9234_mignonfrancois\\node_modules\\css-loader\\dist\\index.js:155:5)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)");
 
 /***/ })
 
@@ -128,8 +127,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
-/******/ 			"css/app": 0,
-/******/ 			"css/styles": 0
+/******/ 			"css/app": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -179,9 +177,9 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/styles"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/styles"], () => (__webpack_require__("./resources/sass/app.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/styles"], () => (__webpack_require__("./resources/css/styles.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/sass/app.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/css/styles.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
