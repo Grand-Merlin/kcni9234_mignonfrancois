@@ -38,6 +38,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
             formContainer.style.backgroundImage = "url('/images/background.png')";
         }
     });
+    
+    /* Ajout d'un écouteur d'événements "click" au bouton d'annulation */
+    document.getElementById('cancel').addEventListener('click', function() {
+        window.location.href = '/devweb'; // Remplacez "/devweb" par votre URL
+    });
 });
 
 /* Fonction pour valider une adresse e-mail */
