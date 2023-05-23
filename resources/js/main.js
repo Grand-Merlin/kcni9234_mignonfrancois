@@ -89,10 +89,8 @@ $(document).ready(function () {
         try {
             /* Récupération de l'e-mail et du mot de passe des champs de saisie */
             var email = emailInput.val();
-            var confirmEmail = confirmEmailInput.val();
             var password = passwordInput.val();
-            var confirmPassword = confirmPasswordInput.val();
-
+            
             /* Si l'e-mail n'est pas valide, si les e-mails ne correspondent pas ou si le mot de passe n'est pas valide, blocage de la soumission du formulaire */
             if (!validateEmail(email)) {
                 alert('Veuillez entrer une adresse e-mail valide.');
