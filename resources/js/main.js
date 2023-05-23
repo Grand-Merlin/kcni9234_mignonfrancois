@@ -8,6 +8,8 @@ $(document).ready(function () {
     var confirmPasswordInput = $('#confirm-password');
     var passwordValidationIcon = $('#password-validation-icon');
     var confirmPasswordValidationIcon = $('#confirm-password-validation-icon');
+    var passwordValidationIcon = $('#password-validation-icon');
+    var confirmPasswordValidationIcon = $('#confirm-password-validation-icon');
 
     /* Désactivation temporaire des transitions */
     body.css('transition', 'none');
@@ -39,7 +41,7 @@ $(document).ready(function () {
     });
 
     /* Réactivation des transitions après un court délai */
-    setTimeout(function() {
+    setTimeout(function () {
         body.css('transition', '');
         form.css('transition', '');
         formContainer.css('transition', '');
@@ -126,4 +128,25 @@ $(document).ready(function () {
         /* Test du mot de passe avec l'expression régulière et renvoi du résultat */
         return re.test(password);
     }
+
+    passwordInput.on('input', function () {
+        if (validatePassword(passwordInput.val())) {
+            // Si le mot de passe est valide, affichez l'icône de succès
+            passwordValidationIcon.attr('src', '/images/icon_success.png');
+        } else {
+            // Si le mot de passe n'est pas valide, affichez l'icône d'erreur
+            passwordValidationIcon.attr('src', '/images/icon_success.png');
+        }
+    });
+
+    confirmPasswordInput.on('input', function () {
+        if (passwordInput.val() === confirmPasswordInput.val()) {
+            // Si les mots de passe correspondent, affichez l'icône de succès
+            confirmPasswordValidationIcon.attr('src', '/images/icon_success.png');
+        } else {
+            // Si les mots de passe ne correspondent pas, affichez l'icône d'erreur
+            confirmPasswordValidationIcon.attr('src', '/images/icon_success.png');
+        }
+    });
+
 });

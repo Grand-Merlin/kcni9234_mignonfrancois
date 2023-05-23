@@ -94,6 +94,11 @@ form {
     transition: background-image 0.5s ease; /* Transition douce pour les changements d'image d'arrière-plan */
 }
 
+.validation-icon {
+    display: none;
+}
+
+
 /* Définit l'apparence de l'interrupteur du mode sombre */
 *
 {

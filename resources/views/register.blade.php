@@ -8,26 +8,26 @@
 <div class="form-container">
     <form id="login-form" method="POST" action="/registerUser" novalidate>
     @csrf
-        <div class="form-group">
-            <label for="email">Adresse e-mail* :</label>
-            <input type="email" id="email" name="email" required>
-            <img id="password-validation-icon" src="" alt="" class="validation-icon">
-        </div>
-        <div class="form-group">
-            <label for="confirm-email">Confirmez l'adresse e-mail :</label>
-            <input type="email" id="confirm-email" name="confirm-email">
-            <img id="password-validation-icon" src="" alt="" class="validation-icon">
-        </div>
-        <div class="form-group">
-            <label for="password">Mot de passe* :</label>
-            <input type="password" id="password" name="password" required>
-            <img id="password-validation-icon" src="" alt="" class="validation-icon">
-        </div>
-        <div class="form-group">
-            <label for="confirm-password">Confirmez le mot de passe :</label>
-            <input type="password" id="confirm-password" name="confirm-password">
-            <img id="password-validation-icon" src="" alt="" class="validation-icon">
-        </div>
+    <div class="form-group">
+    <label for="email">Adresse e-mail* :</label>
+    <input type="email" id="email" name="email" required>
+    <img id="email-validation-icon" src="{{ asset('images/icon_success.png') }}" alt="success" class="validation-icon">
+</div>
+<div class="form-group">
+    <label for="confirm-email">Confirmez l'adresse e-mail :</label>
+    <input type="email" id="confirm-email" name="confirm-email">
+    <img id="email-validation-icon" src="{{ asset('images/icon_error.png') }}" alt="error" class="validation-icon">
+</div>
+<div class="form-group">
+    <label for="password">Mot de passe* :</label>
+    <input type="password" id="password" name="password" required>
+    <img id="email-validation-icon" src="{{ asset('images/icon_success.png') }}" alt="success" class="validation-icon">
+</div>
+<div class="form-group">
+    <label for="confirm-password">Confirmez le mot de passe :</label>
+    <input type="password" id="confirm-password" name="confirm-password">
+    <img id="email-validation-icon" src="{{ asset('images/icon_error.png') }}" alt="error" class="validation-icon">
+</div>
         <div class="form-group">
             <label for="fullname">Nom complet* :</label>
             <input type="text" id="fullname" name="fullname" required>
