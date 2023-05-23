@@ -37,13 +37,22 @@
             <input type="text" id="address" name="address" required>
         </div>
         <div class="form-group">
-            <label for="country">Pays de résidence :</label>
-            <input type="text" id="country" name="country">
-        </div>
-        <div class="form-group">
-            <label for="locality">Localité* :</label>
-            <input type="text" id="locality" name="locality" required>
-        </div>
+    <label for="country">Pays de résidence :</label>
+    <select id="country" name="country">
+        @foreach($countries as $country)
+            <option value="{{ $country->CDE_PAYS }}">{{ $country->NOM_PAYS }}</option>
+        @endforeach
+    </select>
+</div>
+<div class="form-group">
+    <label for="locality">Localité* :</label>
+    <select id="locality" name="locality" required>
+        @foreach($cities as $city)
+            <option value="{{ $city->ID_VILLE }}">{{ $city->VILLE }}</option>
+        @endforeach
+    </select>
+</div>
+
 	<div class="form-group">
     <input type="checkbox" id="terms" name="terms" required>
     <label for="terms">J'accepte les <a href="cgu.html">Conditions Générales d'Utilisation</a>*</label>
