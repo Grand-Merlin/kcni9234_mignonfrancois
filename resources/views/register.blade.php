@@ -45,7 +45,7 @@
     <label for="terms">J'accepte les <a href="cgu.html">Conditions Générales d'Utilisation</a>*</label>
 </div>
 <div class="form-group">
-    <button type="reset" id="cancel" onclick="window.location.href='/devweb'>Annuler</button>
+    <button type="reset" id="cancel">Annuler</button>
     <button type="submit" id="register">Inscription</button>
 </div>
 
