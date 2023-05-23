@@ -18,6 +18,9 @@
     <input type="email" id="confirm-email" name="confirm-email">
     <img id="confirm-email-validation-icon" src="" alt="" class="validation-icon">
 </div>
+<div class="form-group">
+            <button type="submit" id="login">Connexion</button>
+            <button type="button" id="create-account" onclick="window.location.href='/register'">Créer un nouveau compte</button>
     </form>
  </div>
 <input type="checkbox" id="toggle_checkbox">
