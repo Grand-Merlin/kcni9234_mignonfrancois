@@ -11,9 +11,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
     formContainer.style.transition = 'none';
 
     /* Définition des couleurs d'arrière-plan et de texte initiales */
-    body.style.backgroundColor = '#f9f4e1'; 
-    body.style.color = '#000'; 
-    form.style.backgroundColor = '#f9f4e1'; 
+    body.style.backgroundColor = '#f9f4e1';
+    body.style.color = '#000';
+    form.style.backgroundColor = '#f9f4e1';
+
+    /* Récupération de l'état du mode sombre depuis le localStorage */
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+
+    /* Application de l'état du mode sombre */
+    toggleCheckbox.checked = isDarkMode;
+    if (isDarkMode) {
+        body.classList.add('dark-mode'); // Supposez que vous ayez une classe 'dark-mode' qui applique le mode sombre
+    } else {
+        body.classList.remove('dark-mode');
+    }
+
+    /* Gestion du changement d'état du mode sombre */
+    toggleCheckbox.addEventListener('change', () => {
+        body.classList.toggle('dark-mode', toggleCheckbox.checked);
+
+        /* Mise à jour de l'état du mode sombre dans le localStorage */
+        localStorage.setItem('darkMode', toggleCheckbox.checked);
+    });
 
     /* Réactivation des transitions après un court délai */
     setTimeout(() => {
@@ -23,24 +42,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }, 100);
 
     /* Écoute du changement d'état du bouton bascule */
-    toggleCheckbox.addEventListener('change', function() {
+    toggleCheckbox.addEventListener('change', function () {
         if (this.checked) {
             /* Passage en mode sombre */
             body.style.backgroundColor = '#333';
-            body.style.color = '#f9f4e1'; 
+            body.style.color = '#f9f4e1';
             form.style.backgroundColor = '#333';
             formContainer.style.backgroundImage = "url('/images/background_dark.png')";
         } else {
             /* Passage en mode clair */
-            body.style.backgroundColor = '#f9f4e1'; 
-            body.style.color = '#000'; 
-            form.style.backgroundColor = '#f9f4e1'; 
+            body.style.backgroundColor = '#f9f4e1';
+            body.style.color = '#000';
+            form.style.backgroundColor = '#f9f4e1';
             formContainer.style.backgroundImage = "url('/images/background.png')";
         }
     });
-    
+
     /* Ajout d'un écouteur d'événements "click" au bouton d'annulation */
-    document.getElementById('cancel').addEventListener('click', function() {
+    document.getElementById('cancel').addEventListener('click', function () {
         window.location.href = '/devweb'; // Remplacez "/devweb" par votre URL
     });
 });
@@ -60,7 +79,7 @@ function isPasswordEmpty(password) {
 }
 
 /* Ajout d'un écouteur d'événements "submit" au formulaire */
-document.getElementById('login-form').addEventListener('submit', function(event) {
+document.getElementById('login-form').addEventListener('submit', function (event) {
     try {
         /* Récupération de l'e-mail et du mot de passe des champs de saisie */
         const email = document.getElementById('email').value;
