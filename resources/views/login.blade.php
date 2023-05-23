@@ -3,8 +3,6 @@
 <head>
     <title>Formulaire</title>
     <link href="{{ asset('../../css/styles.css') }}" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
 </head>
 <body>
 <div class="form-container">
@@ -30,6 +28,7 @@
   </div>
   <div id="moon"></div>
 </label>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 <script src="{{ asset('../../js/main.js') }}"></script>
 </body>
 </html>
