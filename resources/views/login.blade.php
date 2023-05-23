@@ -18,7 +18,7 @@
         </div>
         <div class="form-group">
             <button type="submit" id="login">Connexion</button>
-            <button type="button" id="create-account">Créer un nouveau compte</button>
+            <button type="button" id="create-account" onclick="window.location.href='/register'">Créer un nouveau compte</button>
         </div>
     </form>
  </div>
