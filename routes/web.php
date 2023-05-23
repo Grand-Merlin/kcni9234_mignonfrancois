@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterUserController;
 
 
 /*
@@ -32,6 +33,7 @@ Route::get('/immobilier', function () {
     return view('immobilier');
 });
 
+Route::get('/register', [RegisterUserController::class, 'showForm']);
 Route::post('/verifauth', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout']);
 //Route::post('/registerUser', [RegisterUserController::class'']);
