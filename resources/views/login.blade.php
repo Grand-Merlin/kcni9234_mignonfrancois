@@ -6,7 +6,7 @@
 </head>
 <body>
 <div class="form-container">
-    <form id="login-form" method="POST" action="/devweb" novalidate>
+    <form id="login-form" method="POST" action="{{ route('login') }}" novalidate>
     @csrf
         <div class="form-group">
             <label for="email">Adresse e-mail* :</label>
