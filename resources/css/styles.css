@@ -86,7 +86,7 @@ form {
     width: 90%; /* Largeur du conteneur */
     height: 90vh; /* Hauteur du conteneur */
     margin: auto; /* Centrer le conteneur */
-    background-image: url('../../img/background.png'); /* Image d'arrière-plan du conteneur */
+    background-image: url('../img/background.png'); /* Image d'arrière-plan du conteneur */
     background-size: cover; /* L'image d'arrière-plan couvre tout le conteneur */
     background-position: center; /* Position de l'image d'arrière-plan au centre */
     padding: 20px; /* Espace autour du contenu du conteneur */
