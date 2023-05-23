@@ -13,7 +13,7 @@
             <p class="welcome-text">Bienvenue, {{ Auth::user()->name }}</p>
             <div class="header-buttons">
             <a href="{{ url('/immobilier') }}" class="btn">Ajouter</a>
-                <form method="POST" action="{{ route('/logout') }}">
+                <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button class="btn">Déconnexion</button>
                 </form>
@@ -43,11 +43,6 @@
             @endforeach
         </div>
     </div>
-    
-    <form method="POST" action="{{ route('logout') }}">
-        @csrf
-        <button type="submit">Déconnexion</button>
-    </form>
     <input type="checkbox" id="toggle_checkbox">
     <label for="toggle_checkbox" class="switch-label">
       <div id="star">
