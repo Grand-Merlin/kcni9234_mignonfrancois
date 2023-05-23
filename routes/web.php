@@ -15,7 +15,7 @@ use App\Http\Controllers\LoginController;
 |
 */
 
-Route::get('/devweb', function () {
+Route::get('/', function () {
     return view('login');
 });
 
