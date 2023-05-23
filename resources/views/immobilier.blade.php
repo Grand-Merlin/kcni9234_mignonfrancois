@@ -44,7 +44,7 @@
         </div>
     </div>
     
-    <form method="POST" action="{{ route('login') }}">
+    <form method="POST" action="{{ route('devweb') }}">
         @csrf
         <button type="submit">Déconnexion</button>
     </form>
